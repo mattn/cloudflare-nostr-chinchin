@@ -14,6 +14,6 @@ jobs:
       - name: Publish
         uses: cloudflare/wrangler-action@v3
         with:
-          apiToken: ${{ secrets.CF_API_TOKEN }}
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           preCommands: npm install
           command: publish
