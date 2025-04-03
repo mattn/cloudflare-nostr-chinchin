@@ -5,17 +5,6 @@ export interface Env {
     PUSHOVER_TOKEN: string;
 }
 
-import querystring from "querystring";
-
-function escapeHTML(str: string): string {
-    return str
-        .replace(/&/g, "&amp;")
-        .replace(/</g, "&lt;")
-        .replace(/>/g, "&gt;")
-        .replace(/"/g, "&quot;")
-        .replace(/'/g, "&#039;");
-}
-
 async function getImageBlob(imageUrl: string): Promise<Blob> {
     const response = await fetch(imageUrl);
     if (!response.ok) throw new Error(`HTTP error! Status: ${response.status}`);
